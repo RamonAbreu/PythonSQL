@@ -1,0 +1,483 @@
+PainelPrincipal:
+    PainelInicial
+        id:painel_inicial
+    Eldorado:
+    CidadeIndustrial:
+    VilaOeste:
+    Gameleira:
+    Calafate:
+    CarlosPrates:
+    Lagoinha:
+    SantaEfigenia
+    PainelCentral:
+        id:painel_central
+    PainelVilarinho:
+
+
+
+<PainelInicial>:
+    id:id_inicial
+    name:"inicial"
+    Label:
+        text:"Metrô de BH em tempo real"
+        color:0,0,0,1
+        background_color:(112/255,22/255,85/255,1)
+        font_size:16
+        size_hint_y:None
+        pos_hint:{'center_x':0.5, 'top':1}
+        height:'50dp'
+        canvas.before:
+            Color:
+                rgba:self.background_color
+            Rectangle:
+                pos:self.pos
+                size:self.size
+    Label:
+        text:"Clique na estação de embarque"
+        font_size:20
+        color:0,0,0,1
+        background_color:0,0,1,1
+        size_hint_y:None
+        pos_hint:{'center_x':0.5, 'top':.90}
+        height:'55dp'
+        canvas.before:
+            Color:
+                rgba:self.background_color
+            Rectangle:
+                pos:self.pos
+                size:self.size
+    ScrollView
+        name:'sv'
+        id:id_sv
+        size_hint_y:.83
+        pos_hint:{'x':0, 'y':.11}
+        do_scroll_x:False
+        do_scroll_y:True
+        scroll_type:['bars', 'content']
+        bar_width:10
+        GridLayout:
+            cols:1
+            background_color:0,0,0.4,1
+            padding:30
+            spacing:2
+            size:root.width, root.height
+            size_hint_y:None
+            size_hint_x:None
+            height:self.minimum_height
+            row_default_height:180
+            row_force_default:True
+            Button:
+                text: "Central"
+                font_size:26
+                size:100,100
+                size_hint_y:None
+                background_color:0,0.8,0.4,1
+                on_release:
+                    app.root.current = "uct"
+                    root.manager.transition.direction = "left"
+            Button:
+                background_color:0,0.4,0.8,1
+                text: "Eldorado"
+                font_size:32
+                size_hint_y:None
+                size:100,100
+                on_release:
+                    app.root.current = "uel"
+                    root.manager.transition.direction = "left"
+
+            Button:
+                text: "CidadeIndustrial"
+                font_size:32
+                size:100,100
+                size_hint_y:None
+                background_color:0,0.8,0.4,1
+                on_release:
+                    app.root.current = "uci"
+                    root.manager.transition.direction = "left"
+
+            Button:
+                text: "Vila Oeste"
+                font_size:32
+                size:100,100
+                size_hint_y:None
+                background_color:0,0.4,0.8,1
+                on_release:
+                    app.root.current = "uvo"
+                    root.manager.transition.direction = "left"
+
+            Button:
+                text: "Gameleira"
+                size:100,100
+                size_hint_y:None
+                font_size:32
+                background_color:0,0.8,0.4,1
+                on_release:
+                    app.root.current = "ugm"
+                    root.manager.transition.direction = "left"
+
+            Button:
+                text: "Calafate"
+                size:100,100
+                size_hint_y:None
+                font_size:32
+                background_color:0,0.4,0.8,1
+                on_release:
+                    app.root.current = "ucl"
+                    root.manager.transition.direction = "left"
+
+            Button:
+                text: "Carlos Prates"
+                size:100,100
+                size_hint_y:None
+                font_size:32
+                background_color:0,0.8,0.4,1
+                on_release:
+                    app.root.current = "ucp"
+                    root.manager.transition.direction = "left"
+
+            Button:
+                text: "Lagoinha"
+                font_size:32
+                size:100,100
+                size_hint_y:None
+                background_color:0,0.4,0.8,1
+                on_release:
+                    app.root.current = "ulg"
+                    root.manager.transition.direction = "left"
+
+
+
+            Button:
+                text: "Santa Efigênia"
+                font_size:32
+                size:100,100
+                size_hint_y:None
+                background_color:0,0.4,0.8,1
+                on_release:
+                    app.root.current = "use"
+                    root.manager.transition.direction = "left"
+            Button:
+                text: "Santa Tereza"
+                font_size:32
+                size:100,100
+                size_hint_y:None
+                background_color:0,0.4,0.8,1
+                on_release:
+                    app.root.current = "ust"
+                    root.manager.transition.direction = "left"
+            Button:
+                text: "Horto"
+                font_size:32
+                size:100,100
+                size_hint_y:None
+                background_color:0,0.4,0.8,1
+                on_release:
+                    app.root.current = "uhf"
+                    root.manager.transition.direction = "left"
+            Button:
+                text: "Santa Inês"
+                font_size:32
+                size:100,100
+                size_hint_y:None
+                background_color:0,0.4,0.8,1
+                on_release:
+                    app.root.current = "use"
+                    root.manager.transition.direction = "left"
+            Button:
+                text: "Vilarinho"
+                font_size:32
+                size:100,100
+                size_hint_y:None
+                background_color:0,0.8,0.4,1
+                on_release:
+                    app.root.current = "uvl"
+                    root.manager.transition.direction = "left"
+
+<Eldorado>:
+    name:"uel"
+    BoxLayout:
+        orientation:"vertical"
+        size:root.width, root.height
+
+        Button:
+            background_color:0,0,0,1
+            text:"Retorna ao menu principal"
+            on_release:
+                app.root.current = "inicial"
+                root.manager.transition.direction = "right"
+        Label:
+
+            color: 0,0,1,1
+            text: "Central"
+            font_size:32
+        Label:
+            id:id_uel
+            color: 0,0,1,1
+            font_size:32
+
+<CidadeIndustrial>:
+    name:"uci"
+    BoxLayout:
+        orientation:"vertical"
+        size:root.width, root.height
+
+        Button:
+            background_color:0,0,0,1
+            text:"Retorna ao menu principal"
+            on_release:
+                app.root.current = "inicial"
+                root.manager.transition.direction = "right"
+        Label:
+
+            color: 0,0,1,1
+            text: "Cidade Industrial"
+            font_size:32
+        Label:
+            id:id_uci
+            color: 0,0,1,1
+            font_size:32
+<VilaOeste>:
+    name:"uvo"
+    BoxLayout:
+        orientation:"vertical"
+        size:root.width, root.height
+
+        Button:
+            background_color:0,0,0,1
+            text:"Retorna ao menu principal"
+            on_release:
+                app.root.current = "inicial"
+                root.manager.transition.direction = "right"
+        Label:
+
+            color: 0,0,1,1
+            text: "Vila Oeste"
+            font_size:32
+        Label:
+            id:id_uvo
+            color: 0,0,1,1
+            font_size:32
+<Gameleira>:
+    name:"ugm"
+    BoxLayout:
+        orientation:"vertical"
+        size:root.width, root.height
+
+        Button:
+            background_color:0,0,0,1
+            text:"Retorna ao menu principal"
+            on_release:
+                app.root.current = "inicial"
+                root.manager.transition.direction = "right"
+        Label:
+
+            color: 0,0,1,1
+            text: "Gameleira"
+            font_size:32
+        Label:
+            id:id_ugm
+            color: 0,0,1,1
+            font_size:32
+<Calafate>
+    name:"ucl"
+    BoxLayout:
+        orientation:"vertical"
+        size:root.width, root.height
+
+        Button:
+            background_color:0,0,0,1
+            text:"Retorna ao menu principal"
+            on_release:
+                app.root.current = "inicial"
+                root.manager.transition.direction = "right"
+        Label:
+
+            color: 0,0,1,1
+            text: "Calafate"
+            font_size:32
+        Label:
+            id:id_uct
+            color: 0,0,1,1
+            font_size:32
+<CarlosPrates>
+    name:"ucp"
+    BoxLayout:
+        orientation:"vertical"
+        size:root.width, root.height
+
+        Button:
+            background_color:0,0,0,1
+            text:"Retorna ao menu principal"
+            on_release:
+                app.root.current = "inicial"
+                root.manager.transition.direction = "right"
+        Label:
+
+            color: 0,0,1,1
+            text: "Carlos Prates"
+            font_size:32
+        Label:
+            id:id_uct
+            color: 0,0,1,1
+            font_size:32
+<Lagoinha>:
+    name:"ulg"
+    BoxLayout:
+        orientation:"vertical"
+        size:root.width, root.height
+
+        Button:
+            background_color:0,0,0,1
+            text:"Retorna ao menu principal"
+            on_release:
+                app.root.current = "inicial"
+                root.manager.transition.direction = "right"
+        Label:
+
+            color: 0,0,1,1
+            text: "Lagoinha"
+            font_size:32
+        Label:
+            id:id_ucl
+            color: 0,0,1,1
+            font_size:32
+<PainelCentral>:
+    name:"uct"
+    id:central
+    BoxLayout:
+        padding:20
+        spacing:20
+        orientation:"vertical"
+        size_hint_y:None
+        pos_hint:{'center_x': 0.5,'y':0}
+        size:root.width, root.height
+        Label:
+            background_color:0,0,1,1
+            #size_hint:None,None
+            size_hint_y:None
+            height:'50dp'
+            color: 1,0,0,1
+            text: "Estação Central"
+            font_size:30
+            pos_hint:{'center_x': 0.5}
+            canvas.before:
+                Color:
+                    rgba:self.background_color
+                Rectangle:
+                    size:self.size
+                    pos:self.pos
+        Label:
+            id:id_uctv1
+            color: 0,0,0.73,1
+            background_color:1,1,1,1
+            font_size:20
+            size_hint_y:None
+            #pos_hint:{'center_x':0.5, 'y':0.6}
+            height:150
+            canvas.before:
+                Color:
+                    rgba:self.background_color
+                Rectangle:
+                    size:self.size
+                    pos:self.pos
+#            Button:
+#                id:btn_uctv1
+#                text:"Serie 1000"
+#                size_hint:None, None
+#                pos_hint:{'center_x':0.5, 'y':0.5}
+#                on_release:
+#                    root.abrir_imagem()
+        Label:
+            id:id_uctv2
+            color: 0,0,0.73,1
+            background_color:1,1,1,1
+            font_size:20
+            size_hint_y:None
+            #pos_hint:{'center_x':0.5, 'y':0.6}
+            height:150
+            canvas.before:
+                Color:
+                    rgba:self.background_color
+                Rectangle:
+                    size:self.size
+                    pos:self.pos
+#            Button:
+#                id:btn_uctv2
+#                text:"Serie 1000"
+#                pos_hint:self.texture_size
+#                on_release:
+#                    root.abrir_imagem()
+#            Image:
+#                id:id_imgcaf
+#                source:'caf.jpg'
+#                size_hint:None, None
+#                pos_hint:{'center_x':.5, 'top':0.8}
+#                height:100
+#                width:50
+#                allow_stretch:True
+        Button:
+            size_hint:None, None
+            size:[100,50]
+            pos_hint:{'center_x':0.8}
+            background_color:0,0.5,0.8,1
+            text:""
+
+            on_press:
+                root.seta_press()
+
+            on_release:
+                app.root.current = "inicial"
+                root.manager.transition.direction = "right"
+                root.seta_release()
+            Image:
+                id:id_seta
+                source:'seta.jfif'
+                center_y:self.parent.center_y
+                center_x:self.parent.center_x
+                size_hint: None, None
+                size:[100,50]
+
+
+<SantaEfigenia>:
+    name:"use"
+    BoxLayout:
+        orientation:"vertical"
+        size:root.width, root.height
+
+        Button:
+            background_color:0,0,0,1
+            text:"Retorna ao menu principal"
+            on_release:
+                app.root.current = "inicial"
+                root.manager.transition.direction = "right"
+        Label:
+
+            color: 0,0,1,1
+            text: "Santa Efigênia"
+            font_size:32
+        Label:
+            id:id_use
+            color: 0,0,1,1
+            font_size:32
+
+
+<PainelVilarinho>:
+    name:"uvl"
+
+    BoxLayout:
+        orientation:"vertical"
+        size:root.width, root.height
+        Button:
+            text:"Retorna ao menu principal"
+            on_release:
+                app.root.current = "inicial"
+                root.manager.transition.direction = "right"
+        Label:
+            text: "Vilarinho"
+            font_size:32
+        Label:
+            id:id_uvl
+            text:""
+            font_size:32
+
+
